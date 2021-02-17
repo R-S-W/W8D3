@@ -23,6 +23,22 @@ Array.prototype.myMap = function(callback){
 console.log(array.myMap(add2));
 
 
-Array.prototype.myReduce = function(callback) {
-    
+Array.prototype.myReduce = function(callback, [initialValue]) {
+    if (this.length === 0) { return null; }
+    let acc;
+    let j = 0;
+    if (initialValue != null) { acc = initialValue; }
+    else { acc = this[0]; j++;}
+    for (i = j; i < this.length; i++) {
+        acc = callback(acc, this[i]);
+    }
+    return acc;
 }
+
+let accTest = function (acc, el) {
+    return acc + el;}
+
+array.myReduce(accTest
+);
+
+array.myReduce(accTest, 25);
