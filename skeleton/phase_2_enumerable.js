@@ -33,9 +33,6 @@ Array.prototype.myReduce = function(callback, initialValue) {
         acc = callback(acc, this[i]);
     }
     return acc;
-    
-    
-
 
 }
 
